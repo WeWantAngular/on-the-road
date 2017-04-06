@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Linq;
 using NUnit.Framework;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Moq;
 using OnTheRoad.Data.Contracts;
 using OnTheRoad.Data.Models;
