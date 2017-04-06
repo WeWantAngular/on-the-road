@@ -54,8 +54,8 @@ namespace OnTheRoad.Logic.Tests.Services
         {
             var iUserMock = new Mock<IUser>();
             this.userRepositoryMock.Setup(x => x.GetByUserName(It.IsAny<string>())).Returns(iUserMock.Object);
-
             var userService = new UserService(userRepositoryMock.Object, unitOfWorkMock.Object);
+
             var actual = userService.GetUserInfo("username");
 
             Assert.That(actual, Is.InstanceOf<IUser>());
@@ -76,13 +76,18 @@ namespace OnTheRoad.Logic.Tests.Services
         [Test]
         public void UserRepository_WhenUpdateUserInfoIsCalled_ShouldCallGetByUsernameExactlyOnce()
         {
+            // Arrange
             var iUserMock = new Mock<IUser>();
             var iCityMock = new Mock<ICity>();
+
             this.userRepositoryMock.Setup(x => x.GetByUserName(It.IsAny<string>())).Returns(iUserMock.Object);
 
             var userService = new UserService(userRepositoryMock.Object, unitOfWorkMock.Object);
+
+            // Act
             userService.UpdateUserInfo("username", "fName", "lName", "phoneNumber", "info", iCityMock.Object);
 
+            // Assert
             userRepositoryMock.Verify(x => x.GetByUserName(It.IsAny<string>()), Times.Once);
         }
 

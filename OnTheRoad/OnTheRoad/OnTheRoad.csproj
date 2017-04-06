@@ -248,6 +248,7 @@
     <Content Include="Trips\Default.aspx" />
     <Content Include="WebServices\Tags.asmx" />
     <Content Include="Admin\Admin.master" />
+    <Content Include="fonts\Hobo-Std-Medium.ttf" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

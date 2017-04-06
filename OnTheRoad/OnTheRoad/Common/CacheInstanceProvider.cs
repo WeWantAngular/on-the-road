@@ -3,7 +3,7 @@ using System.Web.Caching;
 
 namespace OnTheRoad.Common
 {
-    internal class CacheInstanceProvider
+    internal class CacheInstanceProvider 
     {
         private static volatile Cache instance;
         private static object syncRoot = new Object();
