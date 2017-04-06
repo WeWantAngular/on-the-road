@@ -25,9 +25,9 @@ namespace OnTheRoad.Data.Repositories
             this.DbSet = this.Context.Set<EntityType>();
         }
 
-        protected IOnTheRoadDbContext Context { get; }
+        protected IOnTheRoadDbContext Context { get; private set; }
 
-        protected DbSet<EntityType> DbSet { get; }
+        protected DbSet<EntityType> DbSet { get; private set; }
 
         public virtual void Add(DomainType model)
         {
